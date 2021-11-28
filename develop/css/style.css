@@ -1,24 +1,258 @@
 * {
-font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
 }
-.highscore {
-    text-decoration: none;
-    color: rgb(56, 3, 117);
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 80px;
+    margin: 35px 0;
 }
-.highscore:hover {
-    text-decoration: none;
-    color:rgb(147, 29, 177)
+:root {
+    --primary-color: rgb(65, 7, 99);
+    --secondary-color:  rgb(197, 16, 197);
 }
-.list {
-    list-style: none;
+  
+.home-container {
+    display: grid;
+    grid-template-columns: .5fr  .85fr .5fr;
+    grid-template-rows: .5fr;
 }
-.btn {
-    background-color: rgb(56, 3, 117);
+
+.home-title {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2 ;
+    text-align: center;
+    font-size: 40px;
+    margin: 10px 0;
+}
+        /* Paragraph */
+.home-text-p {
+    text-align: center;
+    grid-column: 2 / 3;
+    font-weight: 500;
+    font-size: 20px;
+    margin: 10px 0;
+}
+      
+.home-btn {
+    grid-row: 3/4;
+    grid-column: 2/3;
+    text-align: center;
+    padding: 10px 15px;
+    margin: 30px 0;
+    position: relative;
+    left: 200px;
+    width: 100px;
     color: white;
-    padding: 5px 10px;
-border-radius: 10%;
+    background-color: var(--primary-color);
+    border: 2px var(--primary-color) solid;
+    border-radius: 10px;
 }
-.btn:hover {
-    background-color: rgb(147, 29, 177);
-    cursor: pointer;
+.home-btn:hover {
+    background-color: var(--secondary-color);
+    border: 2px var(--secondary-color) solid;
+}
+
+  
+.question-container {
+    display: grid;
+    grid-template-columns: .5fr .85fr .5fr;
+    grid-template-rows: 1fr 2fr;
+}
+.question {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    padding: 10px 15px;
+}
+
+.answer-container {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: 1fr 1fr;
+    margin-left: 15px;
+}
+.answer-One {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    max-width: 200px;
+    max-height: 50px;
+    text-align: left;
+    padding: 10px 15px;
+    margin: 5px 0;
+    color: white;
+    background-color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+}
+.answer-One:hover {
+    background-color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+}
+.answer-Two {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    max-width: 200px;
+    max-height: 50px;
+    text-align: left;
+    padding: 10px 15px;
+    margin: 5px 0;
+    color: white;
+    background-color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+}
+.answer-Two:hover {
+    background-color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+}
+.answer-Three {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+    max-width: 200px;
+    max-height: 50px;
+    text-align: left;
+    padding: 10px 15px;
+    margin: 5px 0;
+    color: white;
+    background-color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+}
+.answer-Three:hover {
+    background-color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+}
+.answer-Four {
+    grid-row: 4 / 5;
+    grid-column: 1 / 2;
+    max-width: 200px;
+    max-height: 50px;
+    text-align: left;
+    padding: 10px 15px;
+    margin: 5px 0;
+    color: white;
+    background-color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+}
+.answer-Four:hover {
+    background-color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+}
+
+
+.done-container {
+    display: grid;
+    grid-template-columns: .35fr 1fr .35fr;
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.done-title {
+    grid-column: 2 / 3;
+    margin: 0 0 10px 85px
+}
+.score {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    margin: 5px 0 0 85px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.input-container {
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+}
+.label {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    text-align: center;
+    position: relative;
+    top: 11px;
+    font-size: 20px;
+    margin-left: 15px;
+}
+.score-input {
+    position: relative;
+    top: 5px;
+    grid-column: 2 / 3;
+    max-height: 35px;
+}
+.submit-btn {
+    grid-column: 3 / 4;
+    position: relative;
+    top: 5px;
+    max-width: 100px;
+    max-height: 35px;
+    margin: 0 20px;
+    color: white;
+    background-color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+}
+.submit-btn:hover {
+    background-color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+}
+
+
+
+.hs-container {
+    display: grid;
+    grid-template-columns: .35fr .65fr .35fr;
+    grid-template-rows: repeat(3, 1fr);
+}
+.high-score-title {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+}
+.leaderboard-score {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    background-color: rgb(253, 206, 253);
+    max-height: 40px;
+    padding: 7px;
+    font-size: 20px;
+}
+.leaderboard {
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr;
+    margin-top: 15px;
+}
+.go-back-btn {
+    grid-column: 1 / 2;
+    max-width: 100px;
+    color: white;
+    background-color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.go-back-btn:hover {
+    background-color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+}
+.clear-highScore {
+    grid-column: 2 / 3;
+    max-width: 150px;
+    color: white;
+    background-color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.clear-highScore:hover {
+    background-color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
 }
